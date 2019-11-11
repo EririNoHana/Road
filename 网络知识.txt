@@ -1,0 +1,25 @@
+1.	httpRequst. setRequestHeader(header:string, value:string)： 
+
+header如果为”Accept”，表示客户端期望接受的数据格式。如果为”Content-Type”，表示客户端发送的数据格式。
+
+有了这个规范后，服务端收到请求，就能正确的解析客户端发送来的数据，当请求处理完后，再按照客户端要求的格式返回，客户端收到结果后，按照服务端返回的格式进行解析。
+
+value:
+		“application/x-www-form-urlencoded”：表示数据格式为 key1=value1&key2=value2的键值对模式，每个键值对之间用&隔开。
+		“multipart/form-data”：上传文件。
+		“application/json”：传递JSON字符串。
+		“text/xml”：
+		
+		get方法只有第一种数据格式可以使用。
+		post方法全部格式都可以使用。
+
+
+2.	get/post使用httpRequest.Send()。方法的区别。get方法如果要传递参数，无需在send里传递参数，而是在open方法的url参数尾部添加 ”?”和参数键值对。post方法则直接在send方法里传递参数。
+
+3.	httpRequest.responseType：设置返回数据格式是文本还是二级制文件。
+
+4.	abort：如果请求已被发送，则立即停止请求。
+
+		
+
+
